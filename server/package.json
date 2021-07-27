@@ -1,0 +1,25 @@
+{
+  "name": "api-boilerplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "",
+  "author": "Mert İLTER",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "@prisma/client": "^2.24.1",
+    "cors": "^2.8.5",
+    "dayjs": "^1.10.5",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "express-handlebars": "^5.3.2",
+    "lodash": "^4.17.21",
+    "prisma": "^2.24.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
