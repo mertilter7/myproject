@@ -26,6 +26,8 @@
               class="custom-file-input"
               type="file"
               name="files"
+              ref="files"
+              @change="onFileSelected"
               multiple
             />
             <textarea v-model="description" name="editor1"></textarea>
@@ -75,6 +77,7 @@ export default {
       url: "http://localhost:5000/home",
       home: {},
       editor: "",
+      selectedFile: null,
     };
   },
   methods: {
