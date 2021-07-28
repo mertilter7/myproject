@@ -75,23 +75,37 @@ export default {
       url: "http://localhost:5000/home",
       home: {},
       editor: "",
-      files: [],
     };
   },
   methods: {
+    onFileSelected() {
+      this.selectedFile = this.$refs.files;
+      console.log(this.$refs.files.files);
+    },
     async onSubmit() {
+      const fd = new FormData();
+      fd.append("files", this.$refs.files.files[0]);
       await axios
         .post(this.url, {
+          files: fd,
           title: this.title,
-          files: this.files,
           description: this.editor.instances.editor1.getData(),
         })
         .then((response) => {
           console.log(response);
-        })
-        .catch((error) => {
-          console.log(error);
         });
+      // await axios
+      //   .post(this.url, {
+      //     title: this.title,
+      //     files: this.files,
+      //     description: this.editor.instances.editor1.getData(),
+      //   })
+      //   .then((response) => {
+      //     console.log(response);
+      //   })
+      //   .catch((error) => {
+      //     console.log(error);
+      //   });
     },
     deleteHomeText(id) {
       axios.delete("http://localhost:5000/home/" + id).then((response) => {

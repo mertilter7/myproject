@@ -19,12 +19,24 @@
     </nav>
     <div class="collapse d-md-none" id="navbarToggleExternalContent">
       <div class="bg-danger p-4 d-flex flex-column w-md-25">
-        <a href="#" class="d-inline-block mb-2 mb-md-3">Anasayfa</a>
-        <a href="#" class="d-inline-block mb-2 mb-md-3">Ürünler</a>
-        <a href="#" class="d-inline-block mb-2 mb-md-3">Haberler</a>
-        <a href="#" class="d-inline-block mb-2 mb-md-3">Slaytlar</a>
-        <a href="#" class="d-inline-block mb-2 mb-md-3">Hakkımızda</a>
-        <a href="#" class="d-inline-block mb-2 mb-md-3">İletişim</a>
+        <Nuxt-Link to="/anasayfa" class="d-inline-block mb-2 mb-md-3"
+          >Anasayfa</Nuxt-Link
+        >
+        <Nuxt-Link to="/urunler" class="d-inline-block mb-2 mb-md-3"
+          >Ürünler</Nuxt-Link
+        >
+        <Nuxt-Link to="/haberler" class="d-inline-block mb-2 mb-md-3"
+          >Haberler</Nuxt-Link
+        >
+        <Nuxt-Link to="/slaytlar" class="d-inline-block mb-2 mb-md-3"
+          >Slaytlar</Nuxt-Link
+        >
+        <Nuxt-Link to="/hakkimizda" class="d-inline-block mb-2 mb-md-3"
+          >Hakkımızda</Nuxt-Link
+        >
+        <Nuxt-Link to="/iletisim" class="d-inline-block mb-2 mb-md-3"
+          >İletişim</Nuxt-Link
+        >
       </div>
     </div>
   </div>

@@ -7,11 +7,11 @@
         </div>
         <div class="col-6">
           <div class="d-flex justify-content-between">
-            <a href="">Anasayfa</a>
-            <a href="">Haberler</a>
-            <a href="">Ürünler</a>
-            <a href="">Hakkımızda</a>
-            <a href="">İletişim</a>
+            <Nuxt-Link to="/anasayfa">Anasayfa</Nuxt-Link>
+            <Nuxt-Link to="/haberler">Haberler</Nuxt-Link>
+            <Nuxt-Link to="/urunler">Ürünler</Nuxt-Link>
+            <Nuxt-Link to="/hakkimizda">Hakkımızda</Nuxt-Link>
+            <Nuxt-Link to="/iletisim">İletişim</Nuxt-Link>
           </div>
         </div>
       </div>
