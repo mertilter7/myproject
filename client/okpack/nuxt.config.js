@@ -19,10 +19,13 @@ export default {
       { rel: 'styleSheet', href: 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css' },
       { rel: 'styleSheet', href: 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap' },
       { rel: 'styleSheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css'}
+
     ],
     script:[
-      {src:'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js'},
-      {src:"https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"}
+      {src:"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"},
+      {src:"https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"},
+      {src:"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"},
+      {src:"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"}
     ]
   },
 

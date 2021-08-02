@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-dark text-white">
+  <div class="text-dark">
     <div class="container mt-0 p-3">
       <div class="row">
         <div class="col-6">
@@ -25,14 +25,14 @@ export default {};
 <style scoped>
 a {
   text-decoration: none;
-  color: white;
+  color: black;
   font-weight: 500;
   font-size: 1.25rem;
   transition: 0.3s ease-in-out;
 }
 a:hover {
   transform: scale(1.3);
-  color: white;
+  color: darkblue;
   text-decoration: none;
 }
 .bg-specialgray {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-light bg-dark p-2 d-flex justify-content-around">
+    <div class="text-light bg-darkorange p-2 d-flex justify-content-around">
       <div>
         <i class="fas fa-place-of-worship fa-lg me-2"></i>
         Hayat Eve Sığar..
@@ -85,5 +85,8 @@ button:hover {
   color: black;
   padding-right: 35px;
   padding-left: 35px;
+}
+.bg-darkorange {
+  background-color: darkorange;
 }
 </style>

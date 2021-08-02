@@ -5,7 +5,7 @@ const prisma = new PrismaClient()
 
 const getHomeText = async ( req , res ) => {
     try {
-        let homeText = await prisma.home.findMany()
+        let homeText = await prisma.home.findMany({ include: { Images: true } })
         res.json(homeText)
     } catch (error) {
         console.log(error)
@@ -16,6 +16,7 @@ const getHomeTextById = async ( req , res ) => {
     try {
         let { id } = req.params
         let homeTextId = await prisma.home.findFirst({
+            include : { Images : true },
             where : { Id : parseInt(id) }
         })
         res.json(homeTextId)
@@ -23,7 +24,6 @@ const getHomeTextById = async ( req , res ) => {
         console.log(error)
     }
 }
-
  const deleteHomeText = async ( req , res ) => {
     try {
         let { id } = req.params
@@ -54,7 +54,8 @@ const createHomeText = async ( req , res ) => {
                        if (err) {
                               reject(err);       
                           } else {
-                                 images.push({path: `store/${fileName}`})
+                                console.log(`store/${fileName}`)
+                                 images.push({path: `http://localhost:5000/store/${fileName}`})
                              resolve();
                              }
                          })
@@ -81,7 +82,6 @@ const createHomeText = async ( req , res ) => {
              console.log(error)
          } 
 }
-
 const updateHomeText = async ( req, res ) => {
     try {
         var uploads = [];

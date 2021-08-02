@@ -3,25 +3,31 @@
     <Header />
     <div class="container">
       <div class="d-flex justify-content-center my-3">
-        <div class="shadow w-50 bg-danger text-light p-4 rounded">
-          <h3 class="text-center">Anasayfa</h3>
+        <div class="shadow bg-danger text-light p-4 rounded">
+          <h3 class="text-center">Hakkımızda Sayfası</h3>
         </div>
       </div>
       <div class="d-flex justify-content-center">
-        <div class="d-flex flex-column my-3">
-          <form
-            @submit.prevent="onSubmit"
-            method="POST"
-            enctype="multipart/form-data"
-          >
-            <input
-              v-model="title"
-              type="text"
-              class="form-control"
-              placeholder="Başlık Giriniz.."
-              aria-label="Username"
-              aria-describedby="addon-wrapping"
-            />
+        <div class="d-flex flex-column">
+          <form @submit.prevent="onSubmit" method="POST">
+            <div class="my-3">
+              <span class="fw-bold fs-5 d-inline-block">Başlık</span>
+              <input
+                v-model="title"
+                name="title"
+                type="text"
+                class="form-control"
+              />
+            </div>
+            <div class="my-3">
+              <span class="fw-bold fs-5 d-inline-block">Alt Başlık</span>
+              <input
+                v-model="subtitle"
+                name="title"
+                type="text"
+                class="form-control"
+              />
+            </div>
             <label for="file-upload" class="custom-file-upload my-3">
               <i class="fa fa-cloud-upload-alt"></i> Yüklenecek Fotoğrafları
               Seçin
@@ -35,38 +41,29 @@
               @change="onFileSelected"
               multiple
             />
-            <!-- <input
-              class="custom-file-input"
-              type="file"
-              name="files"
-              ref="files"
-              @change="onFileSelected"
-              multiple
-            /> -->
             <textarea v-model="description" name="editor1"></textarea>
             <button type="submit" class="btn btn-danger mt-3">Gönder</button>
           </form>
         </div>
       </div>
       <h6 class="text-center mt-4">
-        Anasayfa İçeriğini güncellemek yada silmek için aşağıdan işlemi seçiniz
+        Hakkımızda sayfası içeriğini silmek veya <br />
+        güncellemek için aşağıdan işlemi seçiniz
       </h6>
       <div class="d-flex justify-content-center">
         <div class="w-50 shadow bg-danger text-light p-2 my-3 rounded">
           <ul>
-            <li v-for="(hom, i) in home" :key="i" class="list-unstyled">
+            <li v-for="(news, i) in news" :key="i" class="list-unstyled">
               <div class="d-flex justify-content-between">
                 <div>
-                  {{ hom.title }}
+                  {{ news.title }}
                 </div>
-                <div v-for="(home, i) in home" :key="i">
-                  <NuxtLink :to="'home/' + home.Id">
-                    <i class="far fa-edit me-1"></i>
-                  </NuxtLink>
-                  <button @click="deleteHomeText(home.Id)">
-                    <i class="far fa-trash-alt"></i>
-                  </button>
-                </div>
+                <NuxtLink :to="'news/' + news.Id">
+                  <i class="far fa-edit me-1"></i>
+                </NuxtLink>
+                <button @click="deleteNews(news.Id)">
+                  <i class="far fa-trash-alt"></i>
+                </button>
               </div>
             </li>
           </ul>
@@ -75,7 +72,6 @@
     </div>
   </div>
 </template>
-
 <script>
 import Header from "@/components/Header";
 import axios from "axios";
@@ -87,8 +83,9 @@ export default {
     return {
       title: "",
       description: "",
-      url: "http://localhost:5000/home",
-      home: {},
+      subtitle: "",
+      url: "http://localhost:5000/news",
+      news: {},
       editor: "",
       selectedFile: "",
     };
@@ -96,6 +93,7 @@ export default {
   methods: {
     onFileSelected() {
       this.selectedFile = this.$refs.files.files;
+      console.log(this.selectedFile);
     },
     async onSubmit() {
       let fd = new FormData();
@@ -103,6 +101,7 @@ export default {
         fd.append("files", file);
       });
       fd.append("title", this.title);
+      fd.append("subtitle", this.subtitle);
       fd.append("description", this.editor.instances.editor1.getData());
       await axios
         .post(this.url, fd, {
@@ -114,15 +113,16 @@ export default {
           console.log(response);
         });
     },
-    deleteHomeText(id) {
-      axios.delete("http://localhost:5000/home/" + id).then((response) => {
-        this.home.splice(id, 1);
+    deleteNews(id) {
+      console.log(id);
+      axios.delete("http://localhost:5000/news/" + id).then((response) => {
+        this.news.splice(id, 1);
         console.log(response);
       });
     },
   },
   async created() {
-    await axios.get(this.url).then((response) => (this.home = response.data));
+    await axios.get(this.url).then((response) => (this.news = response.data));
   },
   mounted() {
     this.editor = CKEDITOR;
@@ -132,6 +132,9 @@ export default {
 </script>
 
 <style scoped>
+a {
+  text-decoration: none;
+}
 .custom-file-input::-webkit-file-upload-button {
   visibility: hidden;
 }

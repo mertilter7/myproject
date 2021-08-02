@@ -4,19 +4,19 @@
       <div class="col-12 col-md-3">
         <h1>LOGO</h1>
       </div>
-      <div class="col-12 col-md-3">
-        <h6>Link</h6>
-        <h6>Link</h6>
-        <h6>Link</h6>
-        <h6>Link</h6>
-        <h6>Link</h6>
+      <div class="col-12 col-md-3 d-flex flex-column">
+        <Nuxt-Link to="/anasayfa">Anasayfa</Nuxt-Link>
+        <Nuxt-Link to="/urunler">Ürünler</Nuxt-Link>
+        <Nuxt-Link to="/haberler">Haberler</Nuxt-Link>
+        <Nuxt-Link to="/hakkimizda">Hakkımızda</Nuxt-Link>
+        <Nuxt-Link to="/iletisim">İletişim</Nuxt-Link>
       </div>
-      <div class="col-12 col-md-3">
-        <h6>Link</h6>
-        <h6>Link</h6>
-        <h6>Link</h6>
-        <h6>Link</h6>
-        <h6>Link</h6>
+      <div class="col-12 col-md-3 d-flex flex-column">
+        <Nuxt-Link to="/anasayfa">Anasayfa</Nuxt-Link>
+        <Nuxt-Link to="/urunler">Ürünler</Nuxt-Link>
+        <Nuxt-Link to="/haberler">Haberler</Nuxt-Link>
+        <Nuxt-Link to="/hakkimizda">Hakkımızda</Nuxt-Link>
+        <Nuxt-Link to="/iletisim">İletişim</Nuxt-Link>
       </div>
       <div class="col-12 col-md-3">
         <i class="fab fa-facebook-f fa-lg me-2"></i>
@@ -40,5 +40,16 @@ footer {
   width: 100%;
   overflow: hidden;
   padding: 70px;
+}
+a {
+  display: inline-block;
+  margin-bottom: 5px;
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+}
+a:hover {
+  color: white;
+  transform: scaleY(1.3);
 }
 </style>

@@ -12,20 +12,24 @@
     </div>
     <Navbar />
     <div class="container">
-      <div class="d-flex justify-content-center mt-5">
-        <div v-for="(about, i) in abouts" :key="i">
-          <h3>{{ about.title }}</h3>
+      <div v-for="item in news" :key="item">
+        <div v-for="img in item.Images" :key="img">
+          <img :src="img.path" alt="" class="d-block w-100 mt-3" />
         </div>
       </div>
-      <div class="d-flex justify-content-center mt-3">
-        <div v-for="(about, i) in abouts" :key="i">
-          <p v-html="about.description" class=""></p>
+      <!-- Fotoğraf Bitiş -->
+      <div class="d-flex justify-content-center">
+        <div class="my-3" v-for="(item, i) in news" :key="i">
+          <h1 class="text-center">{{ item.title }}</h1>
+          <h4 class="text-center">{{ item.subtitle }}</h4>
+          <p v-html="item.description" class="mt-4"></p>
         </div>
       </div>
     </div>
     <Footer />
   </div>
 </template>
+
 <script>
 import Navbar from "@/components/Navbar";
 import axios from "axios";
@@ -37,12 +41,13 @@ export default {
   },
   data() {
     return {
-      url: "http://localhost:5000/abouts",
-      abouts: {},
+      url: "http://localhost:5000/news",
+      news: {},
     };
   },
-  async mounted() {
-    await axios.get(this.url).then((response) => (this.abouts = response.data));
+
+  async created() {
+    await axios.get(this.url).then((response) => (this.news = response.data));
   },
 };
 </script>
