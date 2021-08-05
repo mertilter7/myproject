@@ -40,11 +40,13 @@
               aria-label="Slide 3"
             ></button>
           </div>
+          <!-- Slayt Düzenlenecek -->
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img :src="img.path" class="d-block w-100" alt="ses" />
             </div>
           </div>
+          <!-- Slayt Düzenlenecek -->
           <button
             class="carousel-control-prev"
             type="button"
