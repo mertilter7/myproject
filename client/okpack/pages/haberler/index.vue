@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-light bg-darkorange p-2 d-flex justify-content-around">
+    <div class="text-light bg-special p-2 d-flex justify-content-around">
       <div>
         <i class="fas fa-place-of-worship fa-lg me-2"></i>
         Hayat Eve Sığar..
@@ -53,7 +53,14 @@ export default {
 </script>
 
 <style scoped>
-.bg-darkorange {
-  background-color: darkorange;
+@media screen and (min-width: 1024px) {
+  img {
+    height: 580px;
+  }
+}
+@media screen and (max-width: 480px) {
+  img {
+    height: 200px;
+  }
 }
 </style>

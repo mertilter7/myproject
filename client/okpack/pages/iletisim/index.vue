@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-light bg-darkorange p-2 d-flex justify-content-around">
+    <div class="text-light bg-special p-2 d-flex justify-content-around">
       <div>
         <i class="fas fa-place-of-worship fa-lg me-2"></i>
         Hayat Eve Sığar..
@@ -28,7 +28,7 @@
           </div>
         </div>
         <div class="col-12 col-md-6">
-          <div class="">
+          <div>
             <form method="POST">
               <h2>İletişim Formu</h2>
               <textarea
@@ -69,7 +69,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 textarea {
   resize: none;
 }
@@ -85,8 +85,5 @@ button:hover {
   color: black;
   padding-right: 35px;
   padding-left: 35px;
-}
-.bg-darkorange {
-  background-color: darkorange;
 }
 </style>

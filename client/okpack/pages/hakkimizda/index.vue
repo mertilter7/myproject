@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-light bg-darkorange p-2 d-flex justify-content-around">
+    <div class="text-light bg-special p-2 d-flex justify-content-around">
       <div>
         <i class="fas fa-place-of-worship fa-lg me-2"></i>
         Hayat Eve Sığar..
@@ -14,7 +14,7 @@
     <div class="container">
       <div class="d-flex justify-content-center mt-5">
         <div v-for="(about, i) in abouts" :key="i">
-          <h3>{{ about.title }}</h3>
+          <h1>{{ about.title }}</h1>
         </div>
       </div>
       <div class="d-flex justify-content-center mt-3">
@@ -47,8 +47,5 @@ export default {
 };
 </script>
 
-<style scoped>
-.bg-darkorange {
-  background-color: darkorange;
-}
+<style>
 </style>

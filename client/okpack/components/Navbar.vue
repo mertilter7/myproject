@@ -1,18 +1,28 @@
 <template>
-  <div class="text-dark">
-    <div class="container mt-0 p-3">
-      <div class="row">
+  <div class="text-dark bg-special">
+    <div class="container mt-0">
+      <div class="row align-items-center">
         <div class="col-6">
-          <h2>LOGO</h2>
+          <h2 class="d-inline-block p-3 text-light">LOGO</h2>
         </div>
         <div class="col-6">
-          <div class="d-flex justify-content-between">
-            <Nuxt-Link to="/anasayfa">Anasayfa</Nuxt-Link>
-            <Nuxt-Link to="/haberler">Haberler</Nuxt-Link>
-            <Nuxt-Link to="/urunler">Ürünler</Nuxt-Link>
-            <Nuxt-Link to="/hakkimizda">Hakkımızda</Nuxt-Link>
-            <Nuxt-Link to="/iletisim">İletişim</Nuxt-Link>
-          </div>
+          <nav class="d-none d-md-flex">
+            <Nuxt-Link to="/anasayfa" class="d-inline-block p-3"
+              >Anasayfa</Nuxt-Link
+            >
+            <Nuxt-Link to="/haberler" class="d-inline-block p-3"
+              >Haberler</Nuxt-Link
+            >
+            <Nuxt-Link to="/urunler" class="d-inline-block p-3"
+              >Ürünler</Nuxt-Link
+            >
+            <Nuxt-Link to="/hakkimizda" class="d-inline-block p-3"
+              >Hakkımızda</Nuxt-Link
+            >
+            <Nuxt-Link to="/iletisim" class="d-inline-block p-3"
+              >İletişim</Nuxt-Link
+            >
+          </nav>
         </div>
       </div>
     </div>
@@ -25,17 +35,17 @@ export default {};
 <style scoped>
 a {
   text-decoration: none;
-  color: black;
+  color: white;
   font-weight: 500;
   font-size: 1.25rem;
-  transition: 0.3s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 a:hover {
   transform: scale(1.3);
-  color: darkblue;
+  color: white;
   text-decoration: none;
 }
-.bg-specialgray {
-  background: #dedede;
+.bg-special {
+  background: #ff4c29;
 }
 </style>

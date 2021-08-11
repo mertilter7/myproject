@@ -1,6 +1,6 @@
 <template>
-  <footer class="bg-dark text-light">
-    <div class="row">
+  <footer class="bg-spc text-light mt-5">
+    <div class="row align-items-center">
       <div class="col-12 col-md-3">
         <h1>LOGO</h1>
       </div>
@@ -51,5 +51,8 @@ a {
 a:hover {
   color: white;
   transform: scaleY(1.3);
+}
+.bg-spc {
+  background-color: #334756;
 }
 </style>
